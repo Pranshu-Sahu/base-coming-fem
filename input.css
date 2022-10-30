@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p,input{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.btn{
+    @apply absolute top-0 bottom-0 right-0 px-8 py-4 rounded-full hover:opacity-50 hover:shadow-2xl hover:shadow-red-500 transition-opacity duration-500;
+    background:linear-gradient(135deg , hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+.error input{
+    @apply border-2 border-softRed;
+}
+.error .message,.error .error-icon{
+    @apply block;
+}
