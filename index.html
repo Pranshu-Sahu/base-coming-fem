@@ -28,55 +28,65 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- main container -->
-    <main class="grid md:grid-cols-2 min-h-[98vh] max-w-xs mx-auto md:max-w-none md:min-h-max">
-      <div class=" relative">
-        <img src="images/logo.svg" class="m-6 md:ml-20 md:my-10" alt="logo" />
-        <img src="images/hero-mobile.jpg" class="w-full h-52 md:hidden" alt="hero mobile image" />
-        <div class="flex flex-col px-6 py-10 space-y-10 md:space-y-14 text-center md:text-left md:w-11/12 md:pl-20">
-          <img
-            src="images/bg-pattern-desktop.svg"
-            class="absolute inset-0 -z-10"
-            alt="background pattern desktop" />
-          <h1 class="text-4xl md:text-5xl leading-relaxed tracking-[0.2em] uppercase">
-            <span class="font-light text-desaturatedRed">We're</span>
-            <span class="font-semibold text-DarkGrayishRed"> coming soon </span>
+    <div class="grid max-w-xs gap-8 pt-8 mx-auto text-center md:text-left wrapper">
+      <!-- header section -->
+      <header class=" header">
+        <div class="pl-8">
+          <h1 class="sr-only">Base Apparel</h1>
+          <img src="images/logo.svg" alt="" />
+        </div>
+      </header>
+      <!-- hero section -->
+      <picture class="hero">
+        <source media="(min-width: 700px)" srcset="./images/hero-desktop.jpg" />
+        <img
+          src="./images/hero-mobile.jpg" class="object-cover w-full h-full"
+          alt="a female model posing in an orange button up shirt" />
+      </picture>
+      <!-- content section -->
+      <main class="relative main">
+        <img src="images/bg-pattern-desktop.svg" class="absolute inset-0 object-fill -z-10" alt="">
+        <div class="p-8 text-desaturatedRed">
+          <h1 class="grid gap-4 mb-4 text-4xl font-semibold tracking-widest uppercase">
+            <span class="font-light"> we're </span>
+            <span class="block text-slate-800">coming</span><span class="block text-slate-800">soon</span>
           </h1>
-          <p class="font-normal leading-relaxed text-desaturatedRed">
-            Hello fellow shoppers! We're currently building our new fashion store. Add your email
-            below to stay up-to-date with announcements and our launch deals.
+          <p class="text-lg leading-7 md:text-xl md:max-w-lg md:w-11/12">
+            Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our lauch deals
           </p>
-          <form action="#">
-            <div class="relative">
-              <input
-                type="text"
-                class="block border border-desaturatedRed w-full p-4 rounded-full  focus:outline-none focus:ring focus:ring-red-200"
-                placeholder="Email Address" />
-              <img
-                src="images/icon-error.svg"
-                class="absolute -translate-y-1/2 top-1/2 right-20 hidden error-icon"
-                alt="" />
-              <button type="submit" class="btn">
-                <img src="images/icon-arrow.svg" alt="" />
+        </div>
+          <!-- cta section -->
+      <section id="cta">
+        <div class="pl-8 md:max-w-lg md:w-11/12 cta-msg">
+          <form action="#" id="form">
+            <div class='relative'>
+              <label for="email-input" class="sr-only">Enter your Email Address</label>
+              <input id='email-input' type="text" placeholder="Email Address" class="block w-full p-4 border rounded-full md:p-6 border-desaturatedRed focus:outline-none focus:border-2 placeholder:font-mono placeholder:text-desaturatedRed">
+              <!-- error icon -->
+              <img src="images/icon-error.svg" class="absolute hidden -translate-y-1/2 top-1/2 right-24 error-icon" alt="">
+              <!-- success icon -->
+              <span class="absolute hidden w-4 h-8 rotate-45 -translate-y-1/2 border-b-4 border-r-4 border-green-400 top-1/2 right-28 success-icon" name="validity check icon"></span>
+              <!-- submit button -->
+              <button type="submit" class="btn" name="submit button">
+                <span class="sr-only">button</span>
+                <img src="images/icon-arrow.svg" alt="error icon">
               </button>
             </div>
-            <p class="hidden message text-desaturatedRed text-sm mt-1">
-              Please provide a valid email address
-            </p>
+            <p class="hidden pl-4 my-2 text-sm text-left message text-softRed" role="alert">This is not a valid email</p>
+            <p class="hidden text-green-400 valid-input" role="alert"> Looks good!</p>
           </form>
         </div>
-      </div>
-      <!-- desktop image container -->
-      <div class="hidden md:block">
-        <img src="images/hero-desktop.jpg" class="w-full h-full object-cover" alt="" />
-      </div>
-            </main>
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Pranshu Sahu</a>.
-      </p>
-    </footer>
+      </section>
+      </main>
+    
+      <footer class="footer ">
+        <p class="mx-3 text-base break-words attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="#">Pranshu Sahu</a>.
+        </p>
+      </footer>
+    </div>
+<script src="script.js"></script>
   </body>
 </html>

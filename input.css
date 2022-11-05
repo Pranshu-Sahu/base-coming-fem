@@ -2,16 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-p,input{
-    font-family: 'Josefin Sans', sans-serif;
+p,
+input {
+  font-family: "Josefin Sans", sans-serif;
 }
-.btn{
-    @apply absolute top-0 bottom-0 right-0 px-8 py-4 rounded-full hover:opacity-50 hover:shadow-2xl hover:shadow-red-500 transition-opacity duration-500;
-    background:linear-gradient(135deg , hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+.btn {
+  @apply absolute top-0 bottom-0 right-0 px-10 py-4 rounded-full hover:opacity-50 hover:shadow-2xl hover:shadow-red-500 transition-opacity duration-500 hover:-translate-y-1;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
-.error input{
-    @apply border-2 border-softRed;
+
+.error input {
+  @apply border-2 border-softRed;
 }
-.error .message,.error .error-icon{
-    @apply block;
+.error .message,
+.error .error-icon {
+  @apply block;
+}
+.success input {
+  @apply border-2 border-green-400;
+}
+.success .success-icon, .success .valid-input {
+  @apply block;
+}
+
+@media (min-width: 400px) {
+  .hero img {
+    object-position: 0 -1.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper {
+    @apply max-w-5xl gap-0;
+    grid-template-columns: 5fr 3.67fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header hero" "main hero" "footer hero";
+  }
+  .header {
+    grid-area: header;
+  }
+  .hero {
+    grid-area: hero;
+  }
+  .main {
+    grid-area: main;
+  }
+  .footer {
+    grid-area: footer;
+  }
 }
